@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenina Rassool | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: '#5A5A40',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-[#fcfaf7] text-[#1a1a1a] selection:bg-brand selection:text-white;
+            }
+        }
+
+        @layer components {
+            .editorial-title {
+                font-family: 'Playfair Display', serif;
+                @apply text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9];
+            }
+
+            .section-label {
+                @apply text-[10px] uppercase tracking-[0.2em] font-semibold text-brand mb-4 block;
+            }
+
+            .glass-card {
+                @apply bg-white/50 backdrop-blur-sm border border-black/5 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-black/5;
+            }
+
+            .link-hover {
+                @apply relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-current after:transition-all hover:after:w-full;
+            }
+        }
+
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .stagger-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#fcfaf7]/80 backdrop-blur-md border-b border-black/5">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="font-serif text-xl font-bold tracking-tight">LR.</span>
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#about" class="link-hover">About</a>
+                <a href="#experience" class="link-hover">Experience</a>
+                <a href="#writing" class="link-hover">Writing</a>
+                <a href="#contact" class="link-hover">Contact</a>
+            </div>
+            <a href="#contact" class="bg-brand text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-[#4a4a35] transition-colors">
+                Get in touch
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 mb-32">
+            <div class="fade-in-up grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+                <div class="lg:col-span-8">
+                    <span class="section-label">Journalist & Strategist</span>
+                    <h1 class="editorial-title mb-8">
+                        LENINA <br />
+                        <span class="italic font-normal">RASSOOL</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-black/70 max-w-2xl leading-relaxed font-light">
+                        Treating communication not only as narrative, but as infrastructure: 
+                        the flows of information, care, and accountability that sustain societies.
+                    </p>
+                </div>
+                <div class="lg:col-span-4 flex flex-col gap-4 pb-2">
+                    <div class="flex items-center gap-3 text-sm text-black/60">
+                        <div class="w-12 h-[1px] bg-black/20"></div>
+                        <span>Based in South Africa</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm text-black/60">
+                        <div class="w-12 h-[1px] bg-black/20"></div>
+                        <span>20 Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="max-w-7xl mx-auto px-6 mb-32">
+            <div class="fade-in-up grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-4">
+                    <h2 class="font-serif text-4xl mb-6">The Practice</h2>
+                </div>
+                <div class="lg:col-span-8">
+                    <div class="space-y-6 text-lg text-black/80 leading-relaxed">
+                        <p>
+                            Lenina Rassool is a journalist, communications strategist, and multimedia producer with 20 years of experience spanning mainstream media and social justice. She has worked in communications for numerous organisations with a focus on civic engagement, community news and gender justice. Her work has appeared in <span class="font-medium italic">Femina, Cosmopolitan, the Cape Times,</span> and the <span class="font-medium italic">Mail & Guardian</span>.
+                        </p>
+                        <p>
+                            Her practice sits at the border of journalism and systems thinking. She positions communication as both a civic act and a systemic intervention, helping audiences see themselves as participants in larger webs of responsibility and possibility.
+                        </p>
+                        <div class="pt-4 flex flex-wrap gap-4">
+                            <div class="px-4 py-2 bg-brand/5 border border-brand/20 rounded-full text-sm font-medium text-brand">Systems Thinking</div>
+                            <div class="px-4 py-2 bg-brand/5 border border-brand/20 rounded-full text-sm font-medium text-brand">Social Justice</div>
+                            <div class="px-4 py-2 bg-brand/5 border border-brand/20 rounded-full text-sm font-medium text-brand">Multimedia Production</div>
+                            <div class="px-4 py-2 bg-brand/5 border border-brand/20 rounded-full text-sm font-medium text-brand">Civic Tech</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career History -->
+        <section id="experience" class="bg-[#f5f2ed] py-32 mb-32">
+            <div class="max-w-7xl mx-auto px-6">
+                <span class="section-label">Career Journey</span>
+                <h2 class="font-serif text-5xl mb-16">Experience</h2>
+                
+                <div class="space-y-24">
+                    <!-- TCOE -->
+                    <div class="fade-in-up grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        <div class="lg:col-span-3">
+                            <span class="font-mono text-sm opacity-50">2025 — 2026</span>
+                        </div>
+                        <div class="lg:col-span-9">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold">Communications Coordinator</h3>
+                                    <p class="text-brand font-medium">Trust for Community Outreach and Education (TCOE)</p>
+                                </div>
+                                <i data-lucide="users" class="text-black/20 w-8 h-8"></i>
+                            </div>
+                            <p class="text-black/70 mb-6 max-w-2xl">
+                                Produced Annual Reports, coordinated website upgrades, managed media relations, and curated the Inyanda Community Newspaper.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Cape Town TV -->
+                    <div class="fade-in-up grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        <div class="lg:col-span-3">
+                            <span class="font-mono text-sm opacity-50">2017 — 2025</span>
+                        </div>
+                        <div class="lg:col-span-9">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold">News Editor & Producer</h3>
+                                    <p class="text-brand font-medium">Cape Town TV</p>
+                                </div>
+                                <i data-lucide="tv" class="text-black/20 w-8 h-8"></i>
+                            </div>
+                            <div class="space-y-8">
+                                <div class="glass-card">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <h4 class="font-bold">The Womxn Show (16 Seasons)</h4>
+                                        <a href="https://bit.ly/3RYEbm8" target="_blank" class="text-brand hover:underline flex items-center gap-1 text-sm">
+                                            Watch <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                        </a>
+                                    </div>
+                                    <p class="text-sm text-black/60">The Womxn Show is a Ford Foundation-funded television series produced by Cape Town TV focusing on gender-based violence, gender justice and women empowerment.</p>
+                                </div>
+                                <div class="glass-card">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <h4 class="font-bold">Mental Health Matters (13 Episodes)</h4>
+                                        <a href="https://bit.ly/3RXirXQ" target="_blank" class="text-brand hover:underline flex items-center gap-1 text-sm">
+                                            Watch <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                        </a>
+                                    </div>
+                                    <p class="text-sm text-black/60">Mental Health Matters is a Ford Foundation-funded television series unpacking mental health issues and disorders with the aim of building understanding and empathy around mental health and wellness.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Code for SA -->
+                    <div class="fade-in-up grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        <div class="lg:col-span-3">
+                            <span class="font-mono text-sm opacity-50">2016 — 2017</span>
+                        </div>
+                        <div class="lg:col-span-9">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold">Communications & Project Manager</h3>
+                                    <p class="text-brand font-medium">Code for South Africa (OpenUp)</p>
+                                </div>
+                                <i data-lucide="users" class="text-black/20 w-8 h-8"></i>
+                            </div>
+                            <p class="text-black/70 max-w-2xl">
+                                Managed media relations for civic tech applications, developed communication strategies, and conducted end-user testing for social impact tools.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Activate! -->
+                    <div class="fade-in-up grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        <div class="lg:col-span-3">
+                            <span class="font-mono text-sm opacity-50">2014 — 2015</span>
+                        </div>
+                        <div class="lg:col-span-9">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold">Communications Coordinator</h3>
+                                    <p class="text-brand font-medium">ACTIVATE! Change Drivers</p>
+                                </div>
+                                <i data-lucide="users" class="text-black/20 w-8 h-8"></i>
+                            </div>
+                            <p class="text-black/70 max-w-2xl">
+                                Coordinated content for a national youth network of over 1000 change drivers. Magazine production and workshop coordination.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Features Writer -->
+                    <div class="fade-in-up grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        <div class="lg:col-span-3">
+                            <span class="font-mono text-sm opacity-50">2004 — 2009</span>
+                        </div>
+                        <div class="lg:col-span-9">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold">Features Writer & Journalist</h3>
+                                    <p class="text-brand font-medium">Femina & Cosmopolitan Magazine</p>
+                                </div>
+                                <i data-lucide="newspaper" class="text-black/20 w-8 h-8"></i>
+                            </div>
+                            <p class="text-black/70 max-w-2xl">
+                                Deep-dive features and investigative journalism for South Africa's leading lifestyle publications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Writing & Journalism -->
+        <section id="writing" class="max-w-7xl mx-auto px-6 mb-32">
+            <span class="section-label">Selected Works</span>
+            <h2 class="font-serif text-5xl mb-12">Journalism & Writing</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Article 1 -->
+                <a href="https://mg.co.za/partner-content/2025-11-06-a-world-without-sexual-violence/" target="_blank" class="stagger-item group p-8 bg-white border border-black/5 rounded-2xl flex flex-col justify-between h-full transition-all hover:border-brand/30 hover:translate-x-2">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-mono text-xs opacity-40">2026</span>
+                            <i data-lucide="arrow-up-right" class="opacity-0 group-hover:opacity-100 transition-opacity text-brand w-4.5 h-4.5"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2 group-hover:text-brand transition-colors">A world without sexual violence</h4>
+                        <p class="text-sm text-black/50 italic">Mail & Guardian</p>
+                    </div>
+                </a>
+                <!-- Article 2 -->
+                <a href="https://groundup.org.za/article/child-abuse-has-early-warning-system-broken-down/" target="_blank" class="stagger-item group p-8 bg-white border border-black/5 rounded-2xl flex flex-col justify-between h-full transition-all hover:border-brand/30 hover:translate-x-2">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-mono text-xs opacity-40">2024</span>
+                            <i data-lucide="arrow-up-right" class="opacity-0 group-hover:opacity-100 transition-opacity text-brand w-4.5 h-4.5"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2 group-hover:text-brand transition-colors">Child abuse: has the early warning system broken down?</h4>
+                        <p class="text-sm text-black/50 italic">GroundUp</p>
+                    </div>
+                </a>
+                <!-- Article 3 -->
+                <a href="https://www.news24.com/opinions/analysis/analysis-lenina-rassool-south-africa-is-still-falling-short-of-gender-parity-for-councillors-20211123" target="_blank" class="stagger-item group p-8 bg-white border border-black/5 rounded-2xl flex flex-col justify-between h-full transition-all hover:border-brand/30 hover:translate-x-2">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-mono text-xs opacity-40">2021</span>
+                            <i data-lucide="arrow-up-right" class="opacity-0 group-hover:opacity-100 transition-opacity text-brand w-4.5 h-4.5"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2 group-hover:text-brand transition-colors">South Africa is still falling short of gender parity for councillors</h4>
+                        <p class="text-sm text-black/50 italic">News24</p>
+                    </div>
+                </a>
+                <!-- Article 4 -->
+                <a href="https://www.news24.com/opinions/columnists/guestcolumn/opinion-lenina-rassool-police-numbers-on-gbv-desks-do-not-add-up-20220704" target="_blank" class="stagger-item group p-8 bg-white border border-black/5 rounded-2xl flex flex-col justify-between h-full transition-all hover:border-brand/30 hover:translate-x-2">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-mono text-xs opacity-40">2022</span>
+                            <i data-lucide="arrow-up-right" class="opacity-0 group-hover:opacity-100 transition-opacity text-brand w-4.5 h-4.5"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2 group-hover:text-brand transition-colors">Police Numbers on GBV Desks do not add up</h4>
+                        <p class="text-sm text-black/50 italic">News24</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Workshops & Speaking -->
+        <section class="max-w-7xl mx-auto px-6 mb-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div>
+                    <span class="section-label">Facilitation</span>
+                    <h2 class="font-serif text-4xl mb-8">Workshops & Speaking</h2>
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-xs uppercase tracking-widest text-brand font-bold mb-4 opacity-70">Speaking Engagements</h3>
+                            <div class="space-y-6">
+                                <div class="flex gap-4 items-start">
+                                    <i data-lucide="mic-2" class="text-brand mt-1 w-5 h-5"></i>
+                                    <div>
+                                        <p class="font-bold">African Feminisms (Afems) Conference</p>
+                                        <p class="text-sm text-black/60">Discussion with Pumla Dineo Gqola on her book 'The Female Fear Factor' (2021)</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 items-start">
+                                    <i data-lucide="mic-2" class="text-brand mt-1 w-5 h-5"></i>
+                                    <div>
+                                        <p class="font-bold">Virtual Speaking Engagement on Gender-Based Violence</p>
+                                        <p class="text-sm text-black/60">LEVI STRAUS (2021)</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 items-start">
+                                    <i data-lucide="mic-2" class="text-brand mt-1 w-5 h-5"></i>
+                                    <div>
+                                        <p class="font-bold">In-person Speaking Engagement on Gender-Based Violence</p>
+                                        <p class="text-sm text-black/60">Philippi Village (2021)</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 items-start">
+                                    <i data-lucide="mic-2" class="text-brand mt-1 w-5 h-5"></i>
+                                    <div>
+                                        <p class="font-bold">Women Empowerment Webinar</p>
+                                        <p class="text-sm text-black/60">Karate South Africa (2021)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xs uppercase tracking-widest text-brand font-bold mb-4 opacity-70">Workshops</h3>
+                            <div class="space-y-6">
+                                <div class="flex gap-4 items-start">
+                                    <i data-lucide="users" class="text-brand mt-1 w-5 h-5"></i>
+                                    <div>
+                                        <p class="font-bold">GBV Workshop with Sector Participants</p>
+                                        <p class="text-sm text-black/60">Heinrich Boll Foundation (2023)</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 items-start">
+                                    <i data-lucide="users" class="text-brand mt-1 w-5 h-5"></i>
+                                    <div>
+                                        <p class="font-bold">Speaking to the Media (with victims of Gun Violence)</p>
+                                        <p class="text-sm text-black/60">Gun Free South Africa (2023)</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 items-start">
+                                    <i data-lucide="users" class="text-brand mt-1 w-5 h-5"></i>
+                                    <div>
+                                        <p class="font-bold">Public Speaking Masterclass</p>
+                                        <p class="text-sm text-black/60">Embrace- A Movement For Mothers (2021 and 2022)</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 items-start">
+                                    <i data-lucide="users" class="text-brand mt-1 w-5 h-5"></i>
+                                    <div>
+                                        <p class="font-bold">Mobile Journalism/Storytelling</p>
+                                        <p class="text-sm text-black/60">Workers World (2021)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="section-label">Recognition</span>
+                    <h2 class="font-serif text-4xl mb-8">Honors & Recognition</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-4 items-start">
+                            <i data-lucide="award" class="text-brand mt-1 w-5 h-5"></i>
+                            <div>
+                                <p class="font-bold">Online Media Management</p>
+                                <p class="text-sm text-black/60">Fray College / CHARM Programme hosted by the Wits Centre for Journalism (2025)</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <i data-lucide="award" class="text-brand mt-1 w-5 h-5"></i>
+                            <div>
+                                <p class="font-bold">Mail & Guardian: Power of Women</p>
+                                <p class="text-sm text-black/60">2024 — <a href="https://mg.co.za/power-of-women/2024-08-28-lenina-rassool/" target="_blank" class="underline hover:text-brand">Read Profile</a></p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <i data-lucide="award" class="text-brand mt-1 w-5 h-5"></i>
+                            <div>
+                                <p class="font-bold">International Visitor Leadership Programme</p>
+                                <p class="text-sm text-black/60">U.S. Department of State (2023)</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <i data-lucide="award" class="text-brand mt-1 w-5 h-5"></i>
+                            <div>
+                                <p class="font-bold">Leading for Healing: Black Women Executives Mentorship</p>
+                                <p class="text-sm text-black/60">Mental Wellness Initiative and Centre for Mental Wellness and Leadership (2021 - 2022)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-16">
+                        <span class="section-label">Strategic Work</span>
+                        <h2 class="font-serif text-4xl mb-8">Media Relations</h2>
+                        <div class="space-y-6">
+                            <div class="flex gap-4 items-start">
+                                <i data-lucide="briefcase" class="text-brand mt-1 w-5 h-5"></i>
+                                <div>
+                                    <p class="font-bold">PR and Media Liaison for Forced Sterilizations on HIV+ Women</p>
+                                    <p class="text-sm text-black/60">Her Rights Initiative (2023)</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 items-start">
+                                <i data-lucide="briefcase" class="text-brand mt-1 w-5 h-5"></i>
+                                <div>
+                                    <p class="font-bold">Press Release and Distribution</p>
+                                    <p class="text-sm text-black/60">Western Cape Women’s Shelter Movement (2023)</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 items-start">
+                                <i data-lucide="briefcase" class="text-brand mt-1 w-5 h-5"></i>
+                                <div>
+                                    <p class="font-bold">Press Release and Distribution</p>
+                                    <p class="text-sm text-black/60">Mosaic Training Service and Healing Centre (2023)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+<section id="contact" class="max-w-7xl mx-auto px-6">
+  <div class="bg-[#1a1a1a] text-white rounded-[2rem] p-12 md:p-20 overflow-hidden relative">
+    <div class="relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        
+        <!-- Left side: text + LinkedIn -->
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4 block">Connect</span>
+          <h2 class="font-serif text-5xl md:text-7xl mb-8">Let's build better <br /><span class="italic">infrastructure</span>.</h2>
+          <p class="text-white/60 text-lg max-w-md mb-6">
+            Have a project in mind or want to discuss the flows of information and care? Send a message and let's start a conversation.
+          </p>
+
+          <!-- LinkedIn link -->
+          <div class="mt-6">
+            <a href="https://www.linkedin.com/in/leninarassool/" target="_blank" class="hover:text-brand transition-colors text-lg font-medium">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Right side: form -->
+        <div class="w-full">
+          <form name="contact" method="POST" data-netlify="true" class="space-y-6">
+            <input type="hidden" name="form-name" value="contact">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="name" class="text-xs uppercase tracking-wider text-white/40">Name</label>
+                <input type="text" id="name" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors">
+              </div>
+
+              <div class="space-y-2">
+                <label for="email" class="text-xs uppercase tracking-wider text-white/40">Email</label>
+                <input type="email" id="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors">
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label for="subject" class="text-xs uppercase tracking-wider text-white/40">Subject</label>
+              <input type="text" id="subject" name="subject" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors">
+            </div>
+
+            <div class="space-y-2">
+              <label for="message" class="text-xs uppercase tracking-wider text-white/40">Message</label>
+              <textarea id="message" name="message" rows="5" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-brand text-white font-medium py-4 rounded-xl hover:bg-[#4a4a35] transition-all flex items-center justify-center gap-2">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative background element -->
+    <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-brand rounded-full blur-[120px] opacity-20"></div>
+  </div>
+</section>
+    </main>
+
+ <footer class="items-center gap-6 text-sm text-black/40">
+  <div class="flex gap-8 mb-4">
+    <a href="https://www.linkedin.com/in/leninarassool/" target="_blank" class="hover:text-black transition-colors">LinkedIn</a>
+    <a href="#" class="hover:text-black transition-colors">Privacy Policy</a>
+  </div>
+  <p>© 2026 Lenina Rassool. All rights reserved.</p>
+</footer>
+
+
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up, .stagger-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
