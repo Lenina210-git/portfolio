@@ -1,2 +1,2 @@
 # portfolio
-Lenina's portfolio website
+This is Lenina’s portfolio site, built with HTML + Netlify.
